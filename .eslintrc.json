@@ -1,0 +1,54 @@
+{
+  "extends": ["react-app", "prettier", "react-app/jest"],
+  "plugins": ["prettier", "import", "simple-import-sort", "unused-imports"],
+  "root": false,
+  "rules": {
+    "max-params": ["error", { "max": 5 }],
+    "max-nested-callbacks": "error",
+    "complexity": "error",
+    "curly": ["error", "multi"],
+    "prettier/prettier": "error",
+    "sort-imports": "off",
+    "import/order": "off",
+    "simple-import-sort/imports": "error",
+    "max-lines": [
+      "error",
+      {
+        "max": 300,
+        "skipBlankLines": false,
+        "skipComments": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.test.ts",
+        "*.spec.ts"
+      ],
+      "rules": {
+        "max-lines": [
+          "error",
+          {
+            "max": 900,
+            "skipBlankLines": false,
+            "skipComments": false
+          }
+        ]
+      }
+    },
+    {
+      "files": ["selectors.ts"],
+      "rules": {
+        "max-params": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
+}
