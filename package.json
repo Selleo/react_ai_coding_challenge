@@ -51,7 +51,7 @@
     "test:no-watch": "vitest run",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint \"src/**/*.ts*(x)\" --max-warnings=0",
-    "app:setup": "cp db-example.json db.json && npm install"
+    "app:setup": "cp db-example.json db.json && npm install && npm start"
   },
   "browserslist": {
     "production": [
